@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct BoardView: View {
     // MARK: - MVVM variable
@@ -21,8 +22,7 @@ struct BoardView: View {
         GridItem(.flexible(), spacing: 0),
         GridItem(.flexible(), spacing: 0)
     ]
-    private let nItems = (0...41)
-    
+   
     // MARK: - Body view
     var body: some View {
         GeometryReader { geometry in
@@ -62,7 +62,7 @@ struct BoardView: View {
                                     .fill(Color( item.player?.color ?? UIColor.white))
                                     .padding(2)
                                     .onTapGesture {
-                                        if item.player == nil {
+                                        if viewModel.winner == nil {
                                             viewModel.setPosition(item: item)
                                         }
                                     }
@@ -74,13 +74,25 @@ struct BoardView: View {
                     
                     Spacer()
                     VStack {
+                       
+                        HStack {
+                            Text("Ganador")
+                            Circle()
+                                .fill(Color(viewModel.winner?.color ?? UIColor.white))
+                                .padding(2)
+                                .frame(width: 24, height: 24)
+                        }
+                        .opacity( viewModel.winner == nil ? 0 : 1)
+                        
                         HStack {
                             Text("Juegos finalizados: ")
                             Text("\(viewModel.totalGame)")
                         }
                         
                         Button("Resetear partida actual") {
-                            viewModel.resetCurrentGame()
+                            if viewModel.winner == nil {
+                                viewModel.resetCurrentGame()
+                            }
                         }
                         .padding()
                         .foregroundColor(Color.white)
@@ -88,16 +100,21 @@ struct BoardView: View {
                         .clipShape(Capsule())
                         
                         Button("Resetear todas las partidas") {
-                            viewModel.resetAllGame()
+                            if viewModel.winner == nil {
+                                viewModel.resetAllGame()
+                            }
                         }
                         .padding()
                         .foregroundColor(Color.white)
                         .background(Color.indigo)
                         .clipShape(Capsule())
                     }
+                    
+                    
                 }
             }
-        }.onAppear {
+        }
+        .onAppear {
             viewModel.generateBoard()
         }
     }
