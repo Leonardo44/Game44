@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B339C85B27A247DD00BCCA36 /* BoardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339C85A27A247DD00BCCA36 /* BoardItem.swift */; };
+		B33EEECD27911647000D130D /* BoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33EEECC27911647000D130D /* BoardViewModel.swift */; };
+		B33EEED0279117F6000D130D /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33EEECF279117F6000D130D /* Record.swift */; };
+		B33EEED227911808000D130D /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33EEED127911808000D130D /* Player.swift */; };
 		B3F92C5E278D2D5F00F16EB0 /* game44App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F92C5D278D2D5F00F16EB0 /* game44App.swift */; };
 		B3F92C60278D2D5F00F16EB0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F92C5F278D2D5F00F16EB0 /* ContentView.swift */; };
 		B3F92C62278D2D6000F16EB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3F92C61278D2D6000F16EB0 /* Assets.xcassets */; };
@@ -17,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B339C85A27A247DD00BCCA36 /* BoardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardItem.swift; sourceTree = "<group>"; };
+		B33EEECC27911647000D130D /* BoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewModel.swift; sourceTree = "<group>"; };
+		B33EEECF279117F6000D130D /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		B33EEED127911808000D130D /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		B3F92C5A278D2D5F00F16EB0 /* game44.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = game44.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3F92C5D278D2D5F00F16EB0 /* game44App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = game44App.swift; sourceTree = "<group>"; };
 		B3F92C5F278D2D5F00F16EB0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,6 +46,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B33EEECE279117E9000D130D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B33EEECF279117F6000D130D /* Record.swift */,
+				B33EEED127911808000D130D /* Player.swift */,
+				B339C85A27A247DD00BCCA36 /* BoardItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B3F92C51278D2D5F00F16EB0 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +105,7 @@
 		B3F92C71278D2E8A00F16EB0 /* Board View */ = {
 			isa = PBXGroup;
 			children = (
+				B33EEECE279117E9000D130D /* Model */,
 				B3F92C75278D2F3200F16EB0 /* View Model */,
 				B3F92C74278D2F2A00F16EB0 /* View */,
 			);
@@ -104,6 +123,7 @@
 		B3F92C75278D2F3200F16EB0 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
+				B33EEECC27911647000D130D /* BoardViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -178,11 +198,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B339C85B27A247DD00BCCA36 /* BoardItem.swift in Sources */,
 				B3F92C67278D2D6000F16EB0 /* Persistence.swift in Sources */,
 				B3F92C6A278D2D6000F16EB0 /* game44.xcdatamodeld in Sources */,
 				B3F92C73278D2F1E00F16EB0 /* BoardView.swift in Sources */,
 				B3F92C60278D2D5F00F16EB0 /* ContentView.swift in Sources */,
+				B33EEED227911808000D130D /* Player.swift in Sources */,
+				B33EEED0279117F6000D130D /* Record.swift in Sources */,
 				B3F92C5E278D2D5F00F16EB0 /* game44App.swift in Sources */,
+				B33EEECD27911647000D130D /* BoardViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
